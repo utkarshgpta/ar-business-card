@@ -16,11 +16,10 @@
 <body style='margin : 0px; overflow: hidden;'>
 	<a-scene stats embedded arjs='trackingMethod: best; debugUIEnabled: true'>
 		<!-- create your content here. just a box for now -->
-	    	<a-box position='0 0.5 0' material='opacity: 0.5; color: red'></a-box>
-		<a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-		  <a-box position="-1 0.5 -3" rotation="0 45 0" width="1" height="1" depth="1" color="#4CC3D9"></a-box>
-		  <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-		  <a-plane position="0 0 0" rotation="-90 0 0" color="#7BC8A4"></a-plane>
+	    	<a-link class="clickable" href="https://www.google.com/" title="" image="" position="-1.4 0.0 0.333"  rotation="-67.42 0 0" scale="0.6 0.6 0.6" geometry="primitive:circle;segments:64" material="shader:portal;side:double;visible:false" link="title:."><a-box scale="0.8 0.8 1.05" material="src:#linkedinTexture" position="-0.09854454977856898 -0.0036935886841299587 -0.2155814669584256" radius="2" segments-height="84" rotation="-23.450000000000003 0 0" geometry="">
+      <a-animation attribute="rotation" begin="mouseenter" loop="true" end="mouseleave" dur="2000" fill="backwards" to="335 360 360" ease="linear"></a-animation>
+    </a-box></a-link>
+		<a-plane position="0 0 0" rotation="-90 0 0" color="#7BC8A4"></a-plane>
 	    	<!-- define a camera which will move according to the marker position -->
 	    	<a-marker-camera preset='hiro'></a-marker-camera>
 	</a-scene>
