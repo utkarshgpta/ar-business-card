@@ -30,16 +30,18 @@
 	<a-scene stats embedded arjs='trackingMethod: best;'>
 		
 		<a-assets>
-		  <img id="github_icon" src="https://cdn3.iconfinder.com/data/icons/social-media-2169/24/social_media_social_media_logo_github-512.png">
+			<img id="github_icon" src="https://cdn3.iconfinder.com/data/icons/social-media-2169/24/social_media_social_media_logo_github-512.png">
 			<img id="insta_icon" src="https://cdn3.iconfinder.com/data/icons/social-media-2169/24/social_media_social_media_logo_instagram-512.png">
 			<img id="linkedin_icon" src="https://cdn3.iconfinder.com/data/icons/social-media-2169/24/social_media_social_media_logo_reddit-512.png">
 			<img id="facebook_icon" src="https://cdn3.iconfinder.com/data/icons/social-media-2169/24/social_media_social_media_logo_facebook-512.png">
 		</a-assets>
 		
-		<a-box src="#github_icon" position="1 0 0" depth="0.15" height="0.15" width="0.15" navigate-on-click="url: http://github.com/UtkarshGpta"></a-box>
-		<a-box src="#insta_icon" position="0.5 0 0" depth="0.15" height="0.15" width="0.15" navigate-on-click="url: http://instagram.com/utkarshgpta"></a-box>
-		<a-box src="#linkedin_icon" position="-2 0 0" depth="0.15" height="0.15" width="0.15" navigate-on-click="url: http://linkedin.com/utkarshgpta"></a-box>
-		<a-box src="#facebook_icon" position="0 0 -2" depth="0.15" height="0.15" width="0.15" navigate-on-click="url: http://facebook.com/utkarshgpta"></a-box>
+		<a-plane rotation="-90 0 0" position="0.5 0 0" color="yellow" width="2" height="5">
+			<a-box src="#github_icon" position="0 0 0" depth="0.15" height="0.15" width="0.15" navigate-on-click="url: http://github.com/UtkarshGpta"></a-box>
+			<a-box src="#insta_icon" position="0.5 0 0" depth="0.15" height="0.15" width="0.15" navigate-on-click="url: http://instagram.com/utkarshgpta"></a-box>
+			<a-box src="#linkedin_icon" position="-2 0 0" depth="0.15" height="0.15" width="0.15" navigate-on-click="url: http://linkedin.com/utkarshgpta"></a-box>
+			<a-box src="#facebook_icon" position="0 0 -2" depth="0.15" height="0.15" width="0.15" navigate-on-click="url: http://facebook.com/utkarshgpta"></a-box>
+		</a-box>
 		
 		<a-entity id="camera" cursor="rayOrigin: mouse"></a-entity>
 		<a-marker-camera preset='hiro'></a-marker-camera>
