@@ -7,38 +7,46 @@
   <title>The AR Business Card</title>
   <meta name="description" content="AR.js Business Card">
   <meta name="author" content="Utkarsh Gupta">
-	
+  <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+	<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
+
+	<script>
+	  AFRAME.registerComponent('navigate-on-click', {
+	    schema: {
+	      url: {default: ''}
+	    },
+	    init: function () {
+	      var data = this.data;
+	      var el = this.el;
+	      el.addEventListener('click', function () {
+		window.open(data.url, '_blank');
+	      });
+	    }
+	  });        
+	</script>
 </head>
-
-<!-- AR.js by @jerome_etienne - github: https://github.com/jeromeetienne/ar.js - info: https://medium.com/arjs/augmented-reality-in-10-lines-of-html-4e193ea9fdbf -->
-<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
-<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
-
-<script>
-  AFRAME.registerComponent('navigate-on-click', {
-    schema: {
-      url: {default: ''}
-    },
-    init: function () {
-      var data = this.data;
-      var el = this.el;
-      el.addEventListener('click', function () {
-        window.open(data.url, '_blank');
-      });
-    }
-  });        
-</script>
 	
 <body style='margin : 0px; overflow: hidden;'>
-	<a-scene stats embedded arjs='trackingMethod: best; debugUIEnabled: true'>
-		<!-- create your content here. just a box for now -->
-	    	<!-- <a-plane position="0 0 0" rotation="-90 0 0" color="#7BC8A4"></a-plane> -->
-		<a-circle color="green" navigate-on-click="url: http://google.com"></a-box>
-		
-		<a-entity id="camera" cursor="rayOrigin: mouse"></a-entity>
-	    	<!-- define a camera which will move according to the marker position -->
-	    	<a-marker-camera preset='hiro'></a-marker-camera>
-	</a-scene>
-</body>	
+	<a-scene stats embedded arjs='trackingMethod: best;'>
+<!-- 		<a-assets>
+		    <img id="github_icon" src="img/assets/github_icon.png">
+		</a-assets> -->
 
+
+	<!-- 	<a-circle rotation="-90 0 0" position="0.5 2 0" src="#github_icon" radius="0.1" navigate-on-click="url: http://google.com"></a-circle>
+		<a-circle rotation="-90 0 0" position="0.5 0 0" src="#github_icon" radius="0.1" navigate-on-click="url: http://google.com"></a-circle>
+		<a-circle rotation="-90 0 0" position="0.5 -2 0" src="#github_icon" radius="0.1" navigate-on-click="url: http://google.com"></a-circle>
+	 -->
+	<!--         <a-plane color="yellow" rotation="-90 0 0" navigate-on-click="url: http://google.com"></a-plane> -->
+		<a-box rotation="-90 0 0" color="orange" radius="0.2" navigate-on-click="url: http://google.com"></a-box>
+	<!--         <a-circle rotation="-90 0 0" position="-0.9 -4 0" src="#github_icon" radius="0.2" navigate-on-click="url: http://google.com"></a-circle> -->
+	<!--         <a-circle rotation="-90 0 0" position="0.3 -4 0" src="#github_icon" radius="0.2" navigate-on-click="url: http://google.com"></a-circle> -->
+
+	<!-- 	<a-circle src="#github_icon" rotation="-90 0 0" radius="0.1" navigate-on-click="url: http://google.com"></a-circle> -->
+	<!-- 	<a-circle position="10 10 0" color="red" rotation="-90 0 0" radius="0.1" navigate-on-click="url: http://google.com"></a-circle> -->
+
+		<a-entity id="camera" cursor="rayOrigin: mouse"></a-entity>
+		<a-marker-camera preset='hiro'></a-marker-camera>
+	</a-scene>
+</body>
 </html>
