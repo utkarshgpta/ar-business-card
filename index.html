@@ -12,6 +12,30 @@
 
 <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
+	
+<body style='margin : 0px; overflow: hidden;'>
+	<a-scene stats embedded arjs='trackingMethod: best;'>
+<!-- 		<a-assets>
+		    <img id="github_icon" src="img/assets/github_icon.png">
+		</a-assets> -->
+
+		<a-entity id="camera" cursor="rayOrigin: mouse"></a-entity>
+
+	<!-- 	<a-circle rotation="-90 0 0" position="0.5 2 0" src="#github_icon" radius="0.1" navigate-on-click="url: http://google.com"></a-circle>
+		<a-circle rotation="-90 0 0" position="0.5 0 0" src="#github_icon" radius="0.1" navigate-on-click="url: http://google.com"></a-circle>
+		<a-circle rotation="-90 0 0" position="0.5 -2 0" src="#github_icon" radius="0.1" navigate-on-click="url: http://google.com"></a-circle>
+	 -->
+	<!--         <a-plane color="yellow" rotation="-90 0 0" navigate-on-click="url: http://google.com"></a-plane> -->
+		<a-circle rotation="-90 0 0" color="red" radius="0.2" navigate-on-click="url: http://google.com"></a-circle>
+	<!--         <a-circle rotation="-90 0 0" position="-0.9 -4 0" src="#github_icon" radius="0.2" navigate-on-click="url: http://google.com"></a-circle> -->
+	<!--         <a-circle rotation="-90 0 0" position="0.3 -4 0" src="#github_icon" radius="0.2" navigate-on-click="url: http://google.com"></a-circle> -->
+
+	<!-- 	<a-circle src="#github_icon" rotation="-90 0 0" radius="0.1" navigate-on-click="url: http://google.com"></a-circle> -->
+	<!-- 	<a-circle position="10 10 0" color="red" rotation="-90 0 0" radius="0.1" navigate-on-click="url: http://google.com"></a-circle> -->
+
+		<a-marker-camera preset='hiro'></a-marker-camera>
+	</a-scene>
+</body>	
 
 <script>
   AFRAME.registerComponent('navigate-on-click', {
@@ -27,29 +51,5 @@
     }
   });        
 </script>
-	
-<body style='margin : 0px; overflow: hidden;'>
-	<a-scene stats embedded arjs='trackingMethod: best;'>
-		<a-assets>
-		    <img id="github_icon" src="img/assets/github_icon.png">
-		</a-assets>
-
-		<a-entity id="camera" cursor="rayOrigin: mouse"></a-entity>
-
-	<!-- 	<a-circle rotation="-90 0 0" position="0.5 2 0" src="#github_icon" radius="0.1" navigate-on-click="url: http://google.com"></a-circle>
-		<a-circle rotation="-90 0 0" position="0.5 0 0" src="#github_icon" radius="0.1" navigate-on-click="url: http://google.com"></a-circle>
-		<a-circle rotation="-90 0 0" position="0.5 -2 0" src="#github_icon" radius="0.1" navigate-on-click="url: http://google.com"></a-circle>
-	 -->
-	<!--         <a-plane color="yellow" rotation="-90 0 0" navigate-on-click="url: http://google.com"></a-plane> -->
-		<a-circle rotation="-90 0 0" src="#github_icon" radius="0.2" navigate-on-click="url: http://google.com"></a-circle>
-	<!--         <a-circle rotation="-90 0 0" position="-0.9 -4 0" src="#github_icon" radius="0.2" navigate-on-click="url: http://google.com"></a-circle> -->
-	<!--         <a-circle rotation="-90 0 0" position="0.3 -4 0" src="#github_icon" radius="0.2" navigate-on-click="url: http://google.com"></a-circle> -->
-
-	<!-- 	<a-circle src="#github_icon" rotation="-90 0 0" radius="0.1" navigate-on-click="url: http://google.com"></a-circle> -->
-	<!-- 	<a-circle position="10 10 0" color="red" rotation="-90 0 0" radius="0.1" navigate-on-click="url: http://google.com"></a-circle> -->
-
-		<a-marker-camera preset='hiro'></a-marker-camera>
-	</a-scene>
-</body>	
 
 </html>
