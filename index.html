@@ -2,51 +2,37 @@
 
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+	<meta charset="utf-8">
 
-  <title>The AR Business Card</title>
-  <meta name="description" content="AR.js Business Card">
-  <meta name="author" content="Utkarsh Gupta">
-  <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
-	<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
-
-	<script>
-	  AFRAME.registerComponent('navigate-on-click', {
-	    schema: {
-	      url: {default: ''}
-	    },
-	    init: function () {
-	      var data = this.data;
-	      var el = this.el;
-	      el.addEventListener('click', function () {
-		window.open(data.url, '_blank');
-	      });
-	    }
-	  });        
-	</script>
+	<title>The AR Business Card</title>
+	<meta name="description" content="AR.js Business Card">
+	<meta name="author" content="Utkarsh Gupta">
+	<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
 </head>
-	
+
+<script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
+<script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+
 <body style='margin : 0px; overflow: hidden;'>
-	<a-scene stats embedded arjs='trackingMethod: best;'>
-<!-- 		<a-assets>
-		    <img id="github_icon" src="img/assets/github_icon.png">
-		</a-assets> -->
+  <a-scene embedded arjs='sourceType: webcam;'>
+    <!-- handle marker with your own pattern -->
+    <a-marker type='pattern' url='path/to/pattern-marker.patt'>
+      <a-box position='0 0.5 0' material='color: red;'></a-box>
+    </a-marker>
 
-		<a-entity id="camera" cursor="rayOrigin: mouse"></a-entity>
+    <!-- handle marker with hiro preset -->
+    <a-marker preset='hiro'>
+      <a-box position='0 0.5 0' material='color: green;'></a-box>
+    </a-marker>
 
-	<!-- 	<a-circle rotation="-90 0 0" position="0.5 2 0" src="#github_icon" radius="0.1" navigate-on-click="url: http://google.com"></a-circle>
-		<a-circle rotation="-90 0 0" position="0.5 0 0" src="#github_icon" radius="0.1" navigate-on-click="url: http://google.com"></a-circle>
-		<a-circle rotation="-90 0 0" position="0.5 -2 0" src="#github_icon" radius="0.1" navigate-on-click="url: http://google.com"></a-circle>
-	 -->
-	<!--         <a-plane color="yellow" rotation="-90 0 0" navigate-on-click="url: http://google.com"></a-plane> -->
-		<a-circle rotation="-90 0 0" color="red" radius="0.2" navigate-on-click="url: http://google.com"></a-circle>
-	<!--         <a-circle rotation="-90 0 0" position="-0.9 -4 0" src="#github_icon" radius="0.2" navigate-on-click="url: http://google.com"></a-circle> -->
-	<!--         <a-circle rotation="-90 0 0" position="0.3 -4 0" src="#github_icon" radius="0.2" navigate-on-click="url: http://google.com"></a-circle> -->
+    <!-- handle barcode marker -->
+    <a-marker type='barcode' value='5'>
+      <a-box position='0 0.5 0' material='color: blue;'></a-box>
+    </a-marker>
 
-	<!-- 	<a-circle src="#github_icon" rotation="-90 0 0" radius="0.1" navigate-on-click="url: http://google.com"></a-circle> -->
-	<!-- 	<a-circle position="10 10 0" color="red" rotation="-90 0 0" radius="0.1" navigate-on-click="url: http://google.com"></a-circle> -->
-
-		<a-marker-camera preset='hiro'></a-marker-camera>
-	</a-scene>
+    <!-- add a simple camera -->
+    <a-entity camera></a-entity>
+  </a-scene>
 </body>
+
 </html>
